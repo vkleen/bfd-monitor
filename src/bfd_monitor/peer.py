@@ -11,7 +11,7 @@ from google.protobuf.internal import enum_type_wrapper
 GoBGPSessionState = enum_type_wrapper.EnumTypeWrapper(gobgp_pb2._PEERSTATE_SESSIONSTATE)
 
 async def softreset(name):
-    logging.info(f"Softreseting {name}")
+    logging.info(f"Resetting {name}")
     async with aio.insecure_channel('unix:///run/gobgpd/gobgpd.sock') as channel:
         stub = gobgp_pb2_grpc.GobgpApiStub(channel)
         addr = None 
