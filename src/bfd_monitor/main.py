@@ -29,5 +29,5 @@ async def main():
     await asyncio.gather(*(monitor_peer(p) for p in peers))
 
 def run():
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
     asyncio.run(main())
