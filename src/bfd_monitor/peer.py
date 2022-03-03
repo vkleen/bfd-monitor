@@ -24,6 +24,6 @@ async def softreset(name):
         await stub.ResetPeer(gobgp_pb2.ResetPeerRequest(
             address = addr,
             communication = "",
-            soft = True,
+            soft = False,
             direction = gobgp_pb2.ResetPeerRequest.SoftResetDirection.BOTH
             ))
