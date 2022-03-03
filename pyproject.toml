@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "bfd-monitor"
+version = "0.1.0"
+description = ""
+authors = ["Viktor Kleen <viktor@kleen.org>"]
+packages = [
+  { include = "bfd_monitor", from = "src" },
+  { include = "bfdd", from = "src" },
+  { include = "gobgp", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+grpcio-tools = "^1.43"
+
+[tool.poetry.scripts]
+bfd-monitor = 'bfd_monitor:run'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
