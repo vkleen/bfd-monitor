@@ -8,7 +8,7 @@ from gobgp import gobgp_pb2_grpc
 
 from google.protobuf.internal import enum_type_wrapper
 
-async def softreset(name):
+async def reset(name):
     logging.info(f"Resetting {name}")
     async with aio.insecure_channel('unix:///run/gobgpd/gobgpd.sock') as channel:
         stub = gobgp_pb2_grpc.GobgpApiStub(channel)
