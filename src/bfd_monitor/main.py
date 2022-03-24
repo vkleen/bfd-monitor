@@ -22,10 +22,10 @@ def bfdToPeerState(bfd):
 def process(peer_state, monitor_resp):
     if monitor_resp.local.state == bfdd_pb2.SessionState.DOWN:
         return (PeerState.DOWN, True)
-    if (monitor_resp.local.state == bfdd_pb2.SessionState.UP and
-        monitor_resp.remote.state == bfdd_pb2.SessionState.UP and
-        peer_state == PeerState.DOWN):
-        return (PeerState.UP, True)
+#    if (monitor_resp.local.state == bfdd_pb2.SessionState.UP and
+#        monitor_resp.remote.state == bfdd_pb2.SessionState.UP and
+#        peer_state == PeerState.DOWN):
+#        return (PeerState.UP, True)
     return (bfdToPeerState(monitor_resp.local.state), False)
 
 async def monitor_peer(peer_resp):
