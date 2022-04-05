@@ -1,5 +1,6 @@
 {
   inputs = {
+    nixpkgs.url = github:NixOS/nixpkgs;
     poetry2nix.url = github:nix-community/poetry2nix;
     flake-utils.url = github:numtide/flake-utils;
   };
